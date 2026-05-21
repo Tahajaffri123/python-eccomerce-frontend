@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
-import {  } from './app.routes';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
-  standalone: true,
-  imports:[CommonModule,RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  styleUrl: './app.css',
 })
-export class AppComponent {
-  title = 'ecommerce-frontend';
-}
+export class App {}

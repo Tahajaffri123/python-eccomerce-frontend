@@ -1,0 +1,231 @@
+<!-- Top Navigation Bar -->
+<header class="bg-black/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_4px_20px_rgba(0,240,255,0.15)] h-20 px-6 flex justify-between items-center">
+<div class="flex items-center gap-8">
+<div routerLink="/" class="text-2xl font-black italic text-white tracking-widest cursor-pointer">LUXE_STRT</div>
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tighter font-bold">
+<a routerLink="/" routerLinkActive="text-[#00F0FF] border-b-2 border-[#00F0FF] pb-1" [routerLinkActiveOptions]="{exact: true}" class="text-white/60 hover:text-[#00F0FF] transition-all duration-300">Feed</a>
+<a routerLink="/shop" class="text-white/60 hover:text-[#00F0FF] transition-all duration-300">Shop</a>
+<a routerLink="/" class="text-white/60 hover:text-[#00F0FF] transition-all duration-300">Drops</a>
+<a routerLink="/" class="text-white/60 hover:text-[#00F0FF] transition-all duration-300">Archives</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar Integration -->
+<div class="hidden md:flex items-center bg-white/5 border border-white/10 rounded-full px-4 py-2 w-64 group focus-within:border-primary-container transition-all">
+<span class="material-symbols-outlined text-white/40 group-focus-within:text-primary-container">search</span>
+<input class="bg-transparent border-none focus:outline-none focus:ring-0 text-xs font-label-caps text-white w-full placeholder:text-white/20" placeholder="FIND YOUR GEAR" type="text"/>
+</div>
+<div class="flex gap-4">
+<button class="active:scale-95 transition-transform duration-150"><span class="material-symbols-outlined text-white hover:text-primary-container">shopping_cart</span></button>
+<button class="active:scale-95 transition-transform duration-150"><span class="material-symbols-outlined text-white hover:text-primary-container">notifications</span></button>
+<button class="md:hidden"><span class="material-symbols-outlined text-white">menu</span></button>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Hero Section -->
+<section class="relative h-[870px] w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Streetwear Hero" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJyOnI0ran4gwXIGI3brE3QZmibbDEIcNQwvyGKd_8U4bRKv20S6PGGoDce6tEiloYmxX7Nzs5lhDuzw2rIIK2d2BZNVJrCxdvjF_-CaBvrJrho2GxPSym9euSGftWbLDiMCfRZc_54qwCPcGpoBl68k47IemVxfitKimqfsjfxbmACHsF8Xc9nHhLSTTsmf1RN7IjA8FkKJ9kqqkNUPYEraLmG4WwArcAMY9RolU5G4-s_nJJ3ylyIItEWoOsEvdFZwLhyNUa4Gc"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-center items-start text-left px-margin md:px-xl">
+<span class="font-label-caps text-secondary-fixed bg-secondary-fixed/10 px-3 py-1 rounded-full w-fit mb-4">SS24 COLLECTION</span>
+<h1 class="font-headline-xl text-white mb-6 max-w-2xl">COMMAND THE <span class="text-primary-container">CONCRETE.</span></h1>
+<p class="font-body-lg text-white/70  mb-8 text-balance">Engineering technical superiority for the urban avant-garde. The Pro-Series Laptop Bag: Waterproof, anti-theft, and unapologetically bold.</p>
+<div class="flex flex-wrap gap-4 justify-start">
+<button routerLink="/shop" class="bg-primary-container text-on-primary-container px-10 py-4 rounded-full font-label-caps shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:scale-105 active:scale-95 transition-all outline-none">SHOP NOW</button>
+<button routerLink="/shop" class="border-2 border-secondary-fixed text-secondary-fixed px-10 py-4 rounded-full font-label-caps hover:bg-secondary-fixed/10 active:scale-95 transition-all outline-none">VIEW LOOKBOOK</button>
+</div>
+</div>
+</section>
+<!-- New Drops - Scrolling Grid -->
+<section class="py-xl px-margin">
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="font-label-caps text-primary-container">LATEST INTEL</span>
+<h2 class="font-headline-md text-white">NEW DROPS</h2>
+</div>
+<a class="font-label-caps text-white/40 hover:text-white transition-colors cursor-pointer" routerLink="/shop">VIEW ALL DROPS —&gt;</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container-low rounded-lg overflow-hidden border border-white/5 hover:border-primary-container/50 transition-all duration-500 cursor-pointer" routerLink="/product/1">
+<div class="h-[400px] overflow-hidden relative">
+<img alt="Drop 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUh_iqhX79ZSwhqbmlEZZpoXZ2IvJvRkN3u8xXeQRxMSzI3qFKqQ-fk70M9EvKmG0Vpe0lGUiYkoHJVnduyxNEWqtjnRxVD7Y7MJq2lvyB2R_HE9czFoIOpFzCbfGen5z6_6gRdEwVoY87-RgG-Y1MNe1bqxKsnfcGrEFSTzlc_s0NmbXeMRzSyViLmKdMefEImLwOxQw_Z41CB0XekTGMaGuXqKM4uBDWbE9zGO5MNfa781Nh9qZ-a_telSK7tLm-yz3kE5P1Gmc"/>
+<div class="absolute top-4 left-4 bg-secondary-fixed text-black font-label-caps px-2 py-1">LIMITED</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-lg text-white mb-2">NEON-GRID ANORAK</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-headline-md text-xl">$245</span>
+<button class="bg-white/5 p-2 rounded-full hover:bg-primary-container hover:text-black transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container-low rounded-lg overflow-hidden border border-white/5 hover:border-primary-container/50 transition-all duration-500 cursor-pointer" routerLink="/product/2">
+<div class="h-[400px] overflow-hidden relative">
+<img alt="Drop 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx51RhjoXfEjKNuoT8MH_AZ8cLyd7cnEAwdU6xyA_DDYYOQTvI0SePkQizytwexI8b7SXhRPgXJ1uD8mO_SFhzemfLgFa-JZ2DGMjJFn0zQWFV5SOxm06qvL59c8jWxJt6cOaU_gLdivrqbNnRpxSLe5GP7Z7GuluBwFJ6cXlLkMj1O4MpaBzqmxN12UxUqk62jUcYwI3PgL3D6pLS1l4Hai_p4k5mHMh8WQB_Z9e8yiypzop3GOawlqdTmtqGzvfgp8MXYdypmok"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-lg text-white mb-2">TACTICAL CARGO V2</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-headline-md text-xl">$180</span>
+<button class="bg-white/5 p-2 rounded-full hover:bg-primary-container hover:text-black transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container-low rounded-lg overflow-hidden border border-white/5 hover:border-primary-container/50 transition-all duration-500 cursor-pointer" routerLink="/product/3">
+<div class="h-[400px] overflow-hidden relative">
+<img alt="Drop 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4E3u9_Sil3cfbTIE013Rg43LEKzd6o2-63J70iKdp59Os6fY3MwOk2mPqqBEUPR0S3XEdbVRuCICM9fVc-E2FX-l_oTd4KL1XPmrRip1rHzGnoWr1757Hg_wwUA3_o-JzBwoMroDtuA3Nwnr-3DvQrleR-WnpiiuEXFU2XB3hjySO7E-8XtQab6dD9SPQbF7PtmiJEwQ_Hxv4EQ3tQiMGRi9FZwy3uA9dOjirJSOUOwK_16y1uWE579u6vUpBpCiciyc1x8Xf86Y"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-lg text-white mb-2">OVERSIDE BASE TEE</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-headline-md text-xl">$65</span>
+<button class="bg-white/5 p-2 rounded-full hover:bg-primary-container hover:text-black transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface-container-low rounded-lg overflow-hidden border border-white/5 hover:border-primary-container/50 transition-all duration-500 cursor-pointer" routerLink="/product/4">
+<div class="h-[400px] overflow-hidden relative">
+<img alt="Drop 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk0X8Z2MYDeV-6L8XhX22GZ-ni5RFj3q0z_8w-uSNyVtsm-grC5sgGcsiIxSj8rxSokcPTjzeXefkpzljaJGdSbl19YK9IlscktRMC5EJA2EsambXMnBa4yel_jMG7zanIqq632f5nrN4KhiNih40uU7cOLkOQq-0qXl6gVFDEgvnQeb2KoSPXIhSkF3SHHVLkpsgGtmK64pUHnplJLKUmV5eJKe_T3k0r__H73fKwDE9B3_3YBcujscTxwY_1MR9R-Szyx6pj-eU"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-lg text-white mb-2">CYBER-STRIDE RUNNER</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-headline-md text-xl">$320</span>
+<button class="bg-white/5 p-2 rounded-full hover:bg-primary-container hover:text-black transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Masonry Grid -->
+<section class="py-xl px-margin bg-surface-container-lowest">
+<div class="mb-12 text-center">
+<span class="font-label-caps text-secondary-fixed">DEPARTMENTS</span>
+<h2 class="font-headline-md text-white mt-2">CHOOSE YOUR ARMOR</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[800px]">
+<div class="md:col-span-8 group relative overflow-hidden rounded-lg cursor-pointer" routerLink="/shop">
+<img alt="Outerwear" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcnefhjvh30IgCVKDIuAK-UCQwWSBLCr2SJgD3tiebdTQu9jgr0qpU7kK376PGIRlQz6r6-z_TeapGK3Jz5lNsqr7YuDZEJLpqtQLScXwGJIDPA3DN-PiMnPJsPSIQr-gGE3sz5VmeuI__ze01MLGnmlPzFEqC32jZKpVv476EuUGEZTZ8VbCoH6Dz1eeb7cxSllzrpEwrbHXy-1q3rK6qUmIWNPIKTKhADMKlsm4m2bC34uVwvfrSEsOKXcCQLQXhQbAg4eNDSjc"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="font-headline-xl text-white text-4xl mb-4">OUTERWEAR</h4>
+<button class="font-label-caps text-primary-container flex items-center gap-2 group-hover:translate-x-2 transition-transform">EXPLORE GEAR <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-lg cursor-pointer" routerLink="/shop">
+<img alt="Bags" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPtpziC8CQLK1u6CAsYe9q6601AHAPUCQuibMx7FFhwDmWnAVAkuDqoyV4K4zhaPofS2rC4OMGW-3eD6WngcwuQPhOZ_pdKYtJ-Zy_rdm6A1EjvmRReUoCINFy8iilABvAfiKDCd9xh3Qd0WQKAcYubDtDKdPR-d1qVmx_yF-G-05_ASnVF7de7nSRx9tXMQ9fh0BBJB-xjx3A8f6GEQCFt8I_a3ViQ8Ji51AmX7HOWjH_b85fYwtn8jRGROwDTX0gib_q8lNKpow"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="font-headline-xl text-white text-4xl mb-4">ACCESSORIES</h4>
+<button class="font-label-caps text-primary-container flex items-center gap-2 group-hover:translate-x-2 transition-transform">UPGRADE LOADOUT <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden rounded-lg cursor-pointer" routerLink="/shop">
+<img alt="Footwear" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTkl9W5XqXSL6SQFCzHb7LRVZyx_qIXaSnZIDvtIN7oNpDlurIlsBgwfyIWv22_GygvggdxZTsuLZtBGhXfUI5r2pK_e7PYG4LIgaUmyBhTR5LeW4oIflXbjxHCkXjad3QXplHg9TLmFxibZjajRSsXQrbiWy5GMRaxN4-1eRbWTlWcL2mHiL5Kbr88SSSkyDZLXA_EeaLpy58jJ26sIzHFHHMbq_m7m9XT_-Cb32yPIYqQYbTFPkmeju6Pz33LfddV8g-MZbMrwE"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="font-headline-xl text-white text-4xl mb-4">FOOTWEAR</h4>
+<button class="font-label-caps text-primary-container flex items-center gap-2 group-hover:translate-x-2 transition-transform">STEP UP <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="md:col-span-8 group relative overflow-hidden rounded-lg cursor-pointer" routerLink="/shop">
+<img alt="New Arrivals" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIx4LfHkijPIuYcgoQnoRu7Ht5X1qUPfumzd0gV37_iDXNJIl2I75t-H3S5aY0ZTspSaTy9ahWyq2Sf6A6Uk4jP2D82pRCm30PjYVy1lwreYCS1RzhUPPV3YAE96ykfwczINxmNhKiRu4mOAW8FOwwhHUTstKr4-53BwUlqblbJ1nsq48v56Kc6fZ_rUpmJ1MD1G8p1Pe0QuVS9e-84TsEtO3vRer6vA31wNWtGqYjlWLroKrah2Rj3hktxcfICaLMNHTL0ce4-p8"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="font-headline-xl text-white text-4xl mb-4">LIFESTYLE</h4>
+<button class="font-label-caps text-primary-container flex items-center gap-2 group-hover:translate-x-2 transition-transform">THE CULTURE <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community -->
+<section class="py-xl px-margin">
+<div class="bg-surface-container-high rounded-xl p-12 border border-primary-container/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 blur-[100px]"></div>
+<div class="max-w-2xl relative z-10">
+<h2 class="font-headline-md text-white mb-4">JOIN THE UNDERGROUND</h2>
+<p class="font-body-lg text-white/60 mb-8">Get priority access to limited drops, exclusive events, and the digital archive. No noise, just the gear.</p>
+<form class="flex flex-col md:flex-row gap-4" (submit)="$event.preventDefault()">
+<input class="bg-black/40 border border-white/10 rounded-full px-8 py-4 text-white font-label-caps focus:outline-none focus:border-primary-container focus:ring-0 flex-grow transition-all" placeholder="ENTER EMAIL ADDRESS" type="email"/>
+<button class="bg-secondary-fixed text-black px-12 py-4 rounded-full font-label-caps font-bold hover:shadow-[0_0_20px_rgba(195,244,0,0.5)] transition-all" type="submit">TRANSMIT</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-24 bg-[#050505]/95 backdrop-blur-lg border-t border-white/10 z-50 flex justify-around items-center px-4 pb-6 shadow-[0_-8px_30px_rgba(0,0,0,0.5)] rounded-t-[40px]">
+<a class="flex flex-col items-center justify-center bg-[#00F0FF]/10 text-[#00F0FF] rounded-full px-6 py-2 transition-all cubic-bezier(0.34, 1.56, 0.64, 1) active:scale-90" routerLink="/">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all cubic-bezier(0.34, 1.56, 0.64, 1) active:scale-90" routerLink="/shop">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all cubic-bezier(0.34, 1.56, 0.64, 1) active:scale-90" routerLink="/shop">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 hover:text-white transition-all cubic-bezier(0.34, 1.56, 0.64, 1) active:scale-90" routerLink="/login">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black mt-1">Profile</span>
+</a>
+</nav>
+
+<!-- Footer -->
+<footer class="bg-black pt-20 pb-40 md:pb-20 border-t border-white/5">
+<div class="px-margin flex flex-col md:flex-row justify-between gap-12">
+<div class=" flex flex-col items-start text-left">
+<div class="text-3xl font-black italic text-white tracking-widest mb-6 cursor-pointer" routerLink="/">LUXE_STRT</div>
+<p class="text-white/40 font-body-sm text-balance">High-performance technical streetwear for the global citizen. Designed in the city, for the city.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h5 class="font-label-caps text-white mb-6">SUPPORT</h5>
+<ul class="space-y-3 text-white/40 font-body-sm">
+<li><a class="hover:text-primary-container transition-colors" href="#">Shipping</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Returns</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Sizing</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-white mb-6">LEGAL</h5>
+<ul class="space-y-3 text-white/40 font-body-sm">
+<li><a class="hover:text-primary-container transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Security</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h5 class="font-label-caps text-white mb-6">SOCIAL</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all hover:-translate-y-1" href="#" aria-label="Instagram">IG</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all hover:-translate-y-1" href="#" aria-label="Twitter">TW</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all hover:-translate-y-1" href="#" aria-label="YouTube">YT</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 px-margin pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between text-white/20 font-label-caps text-[10px]">
+<span>© 2024 LUXE_STRT GLOBAL ARCHIVE</span>
+<span>ENCRYPTED TRANSACTION SECURE</span>
+</div>
+</footer>
