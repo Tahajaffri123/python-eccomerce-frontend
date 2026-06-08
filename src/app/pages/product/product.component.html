@@ -1,0 +1,209 @@
+<!-- TopNavBar -->
+<nav class="bg-black/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 flex justify-between items-center px-6 h-20 shadow-[0_4px_20px_rgba(0,240,255,0.15)]">
+<div class="text-2xl font-black italic text-white tracking-widest font-['Space_Grotesk'] cursor-pointer" routerLink="/">LUXE_STRT</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tighter font-bold text-white/60 hover:text-[#00F0FF] transition-all duration-300" routerLink="/">Feed</a>
+<a class="font-['Space_Grotesk'] tracking-tighter font-bold text-[#00F0FF] border-b-2 border-[#00F0FF] pb-1" routerLink="/shop">Shop</a>
+<a class="font-['Space_Grotesk'] tracking-tighter font-bold text-white/60 hover:text-[#00F0FF] transition-all duration-300" routerLink="/shop">Collections</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform duration-150 text-white/60 hover:text-[#00F0FF]">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="active:scale-95 transition-transform duration-150 text-white/60 hover:text-[#00F0FF]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</nav>
+
+<main class="pt-32 pb-40 px-margin max-w-7xl mx-auto">
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left: Image Gallery -->
+<div class="md:col-span-7 flex flex-col gap-base">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container rounded-lg group cursor-crosshair">
+<img alt="Premium leather handbag" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" [src]="activeImage()"/>
+<div class="absolute bottom-6 right-6 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00F0FF] text-sm">zoom_in</span>
+<span class="font-label-caps text-label-caps text-white">CLICK TO ZOOM</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-base">
+@for (img of images; track img; let i = $index) {
+  <div class="aspect-square bg-surface-container rounded-md overflow-hidden border transition-all cursor-pointer"
+       [class]="activeImage() === img ? 'border-[#00F0FF]/40' : 'border-white/5 hover:border-[#00F0FF]/30'"
+       (click)="activeImage.set(img)"
+       (keydown.enter)="activeImage.set(img)"
+       tabindex="0">
+  <img alt="Product thumbnail" class="w-full h-full object-cover" [class]="activeImage() === img ? 'opacity-100' : 'opacity-60 hover:opacity-100'" [src]="img"/>
+  </div>
+}
+</div>
+</div>
+
+<!-- Right: Product Info -->
+<div class="md:col-span-5 flex flex-col gap-lg md:sticky md:top-32 self-start">
+<div class="flex flex-col gap-sm">
+<span class="font-label-caps text-label-caps text-[#00F0FF] neon-text-glow">NEW SEASON DROP</span>
+<h1 class="font-headline-xl text-headline-xl text-white">ONYX SLING v.04</h1>
+<div class="flex items-center gap-md">
+<p class="font-headline-md text-headline-md text-white">$480</p>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-label-caps">LTD EDITION</span>
+</div>
+</div>
+
+<div class="flex flex-col gap-md">
+<p class="font-label-caps text-label-caps text-on-surface-variant">COLOR: OBSIDIAN BLACK</p>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full bg-black border-2 border-[#00F0FF] p-0.5"><div class="w-full h-full rounded-full bg-black"></div></button>
+<button class="w-10 h-10 rounded-full bg-[#353534] border-2 border-transparent hover:border-white/20 p-0.5 transition-all"><div class="w-full h-full rounded-full bg-[#353534]"></div></button>
+<button class="w-10 h-10 rounded-full bg-[#283500] border-2 border-transparent hover:border-white/20 p-0.5 transition-all"><div class="w-full h-full rounded-full bg-[#283500]"></div></button>
+</div>
+</div>
+
+<div class="flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant" for="gift-message">GIFT MESSAGE (OPTIONAL)</label>
+<textarea id="gift-message" class="bg-surface-container border border-white/10 rounded-lg p-md text-body-sm focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF] outline-none transition-all h-24 resize-none" placeholder="Write your personalized note..."></textarea>
+</div>
+</div>
+
+<button class="w-full py-6 bg-primary-container text-on-primary-container font-headline-md text-lg rounded-full active:scale-[0.98] transition-all duration-150 neon-border-glow hover:brightness-110 flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined">shopping_bag</span>
+                    ADD TO CART
+</button>
+
+<div class="grid grid-cols-2 gap-md border-t border-white/10 pt-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#00F0FF]">local_shipping</span>
+<span class="font-body-sm text-on-surface-variant">Global Express</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#00F0FF]">verified_user</span>
+<span class="font-body-sm text-on-surface-variant">Authenticity Cert.</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Materials & Care -->
+<section class="mt-xl border-t border-white/10 pt-xl">
+<h2 class="font-headline-md text-headline-md text-white mb-lg">SPECIFICATIONS</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="bg-surface-container rounded-lg p-lg border border-white/5 group">
+<div class="flex justify-between items-center mb-md cursor-pointer">
+<h3 class="font-label-caps text-label-caps text-[#00F0FF]">MATERIALS & CRAFT</h3>
+<span class="material-symbols-outlined text-white transition-transform group-hover:rotate-180">expand_more</span>
+</div>
+<p class="font-body-lg text-on-surface-variant mb-base">Hand-finished full-grain Italian leather with a high-resistance matte coating. Reinforced with technical aramid fiber lining for structural durability.</p>
+<ul class="font-body-sm text-on-surface-variant flex flex-col gap-xs list-disc pl-md">
+<li>Laser-etched logo detailing</li>
+<li>Anodized zinc alloy hardware</li>
+<li>Magnetic secure-lock closure</li>
+</ul>
+</div>
+
+<div class="bg-surface-container rounded-lg p-lg border border-white/5 group">
+<div class="flex justify-between items-center mb-md cursor-pointer">
+<h3 class="font-label-caps text-label-caps text-[#00F0FF]">CARE GUIDE</h3>
+<span class="material-symbols-outlined text-white transition-transform group-hover:rotate-180">expand_more</span>
+</div>
+<p class="font-body-lg text-on-surface-variant">Treat with a premium leather balm once every six months. Avoid direct exposure to prolonged heat and abrasive chemicals. Store in the provided dust bag.</p>
+</div>
+</div>
+</section>
+
+<!-- Complete the Look Carousel -->
+<section class="mt-xl">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-md text-headline-md text-white">COMPLETE THE LOOK</h2>
+<div class="flex gap-base">
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<div class="flex gap-gutter overflow-x-auto no-scrollbar pb-base">
+@for (item of relatedItems; track item.name) {
+<!-- Related Item -->
+<div class="min-w-[280px] bg-surface-container rounded-lg overflow-hidden border border-white/5 group cursor-pointer" routerLink="/product/1">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img alt="Related product thumbnail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" [src]="item.image"/>
+<button class="absolute bottom-4 right-4 bg-white text-black p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="p-md flex flex-col gap-xs">
+<p class="font-label-caps text-label-caps text-on-surface-variant">{{item.category}}</p>
+<h4 class="font-body-lg text-white font-bold">{{item.name}}</h4>
+<p class="font-body-sm text-[#00F0FF]">{{item.price}}</p>
+</div>
+</div>
+}
+</div>
+</section>
+</main>
+
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-24 bg-[#050505]/95 backdrop-blur-lg z-50 border-t border-white/10 flex justify-around items-center px-4 pb-6 shadow-[0_-8px_30px_rgba(0,0,0,0.5)] rounded-t-[40px]">
+<a class="flex flex-col items-center justify-center text-white/40" routerLink="/">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#00F0FF]/10 text-[#00F0FF] rounded-full px-6 py-2 transition-all" routerLink="/shop">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40" routerLink="/shop">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40" routerLink="/login">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-black">Profile</span>
+</a>
+</nav>
+
+<footer class="bg-black pt-20 pb-40 md:pb-20 border-t border-white/5">
+<div class="px-margin flex flex-col md:flex-row justify-between gap-12 max-w-7xl mx-auto">
+<div class=" flex flex-col items-start text-left">
+<div class="text-3xl font-black italic text-white tracking-widest mb-6 cursor-pointer" routerLink="/">LUXE_STRT</div>
+<p class="text-white/40 font-body-sm text-balance">High-performance technical streetwear for the global citizen. Designed in the city, for the city.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h5 class="font-label-caps text-white mb-6">SUPPORT</h5>
+<ul class="space-y-3 text-white/40 font-body-sm">
+<li><a class="hover:text-primary-container transition-colors" href="#">Shipping</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Returns</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Sizing</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-white mb-6">LEGAL</h5>
+<ul class="space-y-3 text-white/40 font-body-sm">
+<li><a class="hover:text-primary-container transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Security</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h5 class="font-label-caps text-white mb-6">SOCIAL</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all hover:-translate-y-1" href="#" aria-label="Instagram">IG</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all hover:-translate-y-1" href="#" aria-label="Twitter">TW</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:border-primary-container hover:text-primary-container transition-all hover:-translate-y-1" href="#" aria-label="YouTube">YT</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 px-margin pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between text-white/20 font-label-caps text-[10px] max-w-7xl mx-auto">
+<span>© 2024 LUXE_STRT GLOBAL ARCHIVE</span>
+<span>ENCRYPTED TRANSACTION SECURE</span>
+</div>
+</footer>

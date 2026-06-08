@@ -1,0 +1,104 @@
+<main class="flex min-h-[100dvh] overflow-hidden">
+  <!-- Left Side: Lifestyle Image -->
+  <section class="hidden lg:flex lg:w-1/2 relative bg-surface-container-lowest overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent z-10"></div>
+  <img alt="Streetwear model" class="absolute inset-0 w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-[2000ms]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB27ft9wyPjJH_mku82QzK0qjB_FbSeueMnXy_qEn4M0yv3bzgd4Nq35VzkKtYeDTAkeQxm3PByN0yXvo3_GN10zmQvhjsZpKsgzbM50dy73bysuS-RsOz7DWEEqG9fLx79Xs2izK5h7ui9KzRwYOQTZkVyTkQmSeYw1SOrk4eOH1vtnRhsd8_L0erd2gb5qGknjQU3wtBxzPNZZunvffdjnwIqrKf7sHfvqFbCT6F35J37lIfKSzv-8EMQauI3Fjk4YZnGdtaiDAQ"/>
+  <div class="absolute bottom-lg left-lg z-20">
+    <div class="flex items-center gap-base mb-sm">
+      <span class="w-12 h-[2px] bg-primary-container"></span>
+      <span class="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Aesthetic 01</span>
+    </div>
+    <h1 class="font-headline-xl text-headline-xl text-white mb-base" routerLink="/">LUXE_STRT</h1>
+    <p class="font-body-lg text-body-lg text-white/70 ">Precision crafted essentials for the urban vanguard.</p>
+  </div>
+  </section>
+  
+  <!-- Right Side: Auth Form -->
+  <section class="w-full lg:w-1/2 flex items-center justify-center p-margin relative overflow-y-auto">
+  <div class=" w-full py-xl mx-auto my-auto">
+    <!-- Brand Mobile Only -->
+    <div class="lg:hidden mb-lg">
+      <h2 routerLink="/" class="font-headline-md text-headline-md text-primary-container italic font-black tracking-tighter hover:cursor-pointer">LUXE_STRT</h2>
+    </div>
+    
+    <!-- Form Header & Toggle -->
+    <div class="mb-lg">
+      <h3 class="font-headline-md text-headline-md text-white mb-md">{{ isLogin() ? 'Welcome Back' : 'Join the Vanguard' }}</h3>
+      <div class="flex p-1 bg-surface-container-high rounded-full w-fit">
+        <button type="button" [class]="isLogin() ? 'px-8 py-2 rounded-full font-label-caps text-label-caps bg-primary-container text-on-primary-fixed transition-all duration-300' : 'px-8 py-2 rounded-full font-label-caps text-label-caps text-white/40 hover:text-white transition-all duration-300'" (click)="setLogin(true)">LOGIN</button>
+        <button type="button" [class]="!isLogin() ? 'px-8 py-2 rounded-full font-label-caps text-label-caps bg-primary-container text-on-primary-fixed transition-all duration-300' : 'px-8 py-2 rounded-full font-label-caps text-label-caps text-white/40 hover:text-white transition-all duration-300'" (click)="setLogin(false)">SIGN UP</button>
+      </div>
+    </div>
+    
+    <!-- Form Fields -->
+    <form class="space-y-md" (submit)="$event.preventDefault()">
+      @if (!isLogin()) {
+        <div class="space-y-xs">
+          <label class="font-label-caps text-label-caps text-white/50 block ml-1" for="name">FULL / NAME</label>
+          <input id="name" class="w-full bg-surface-container-low border border-white/10 rounded-lg px-md py-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="John Doe" type="text"/>
+        </div>
+      }
+      <div class="space-y-xs">
+        <label class="font-label-caps text-label-caps text-white/50 block ml-1" for="email">IDENTITY / EMAIL</label>
+        <input id="email" class="w-full bg-surface-container-low border border-white/10 rounded-lg px-md py-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="name@luxe.strt" type="email"/>
+      </div>
+      <div class="space-y-xs">
+        <div class="flex justify-between items-center px-1">
+        <label class="font-label-caps text-label-caps text-white/50 block" for="password">SECURITY / PASS</label>
+        @if (isLogin()) {
+          <a class="font-label-caps text-[10px] text-primary-container hover:underline" href="#">FORGOT?</a>
+        }
+        </div>
+        <input id="password" class="w-full bg-surface-container-low border border-white/10 rounded-lg px-md py-4 text-white focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="••••••••" type="password"/>
+      </div>
+      
+      @if (isLogin()) {
+        <div class="flex items-center gap-sm px-1">
+          <div class="relative flex items-center">
+          <input class="appearance-none h-5 w-5 border border-white/20 rounded bg-transparent checked:bg-secondary-container checked:border-secondary-container transition-all cursor-pointer peer" id="remember" type="checkbox"/>
+          <span class="material-symbols-outlined absolute text-[14px] text-black left-[3px] pointer-events-none opacity-0 peer-checked:opacity-100" style="font-variation-settings: 'wght' 700;">check</span>
+          </div>
+          <label class="font-body-sm text-body-sm text-white/60 cursor-pointer" for="remember">Remember this device</label>
+        </div>
+      }
+      
+      <button routerLink="/" class="w-full bg-primary-container text-on-primary-fixed font-headline-md text-[18px] py-4 rounded-full neon-glow active:scale-95 transition-all duration-200" type="submit">
+          {{ isLogin() ? 'ENTER_SYSTEM' : 'TRANSMIT_DATA' }}
+      </button>
+    </form>
+    
+    <!-- Social Login -->
+    <div class="mt-lg">
+      <div class="relative flex items-center justify-center mb-md">
+        <div class="flex-grow border-t border-white/5"></div>
+        <span class="mx-4 font-label-caps text-[10px] text-white/30 uppercase tracking-widest text-center whitespace-nowrap">Or authenticate with</span>
+        <div class="flex-grow border-t border-white/5"></div>
+      </div>
+      <div class="grid grid-cols-2 gap-md">
+        <button type="button" class="flex items-center justify-center gap-base border border-white/10 py-3 rounded-full bg-white/5 hover:bg-white/10 transition-all active:scale-95">
+        <img alt="Google" class="w-5 h-5 grayscale opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFqb7ZgVm88mcQmJUHpxNs3e1W47c1_H8mRdl5FmF2nHyDS-uYzsScMhXHc0z0WoLAwucHt5GfdRrbsmee2XW24nDk7QM-0PdGgq-scozVCHl11FX7BZgciniXtS_YgPz6oiJyulb71JCVCzSEbfR5aO2GZPg-oZsPOHHFJARWFVYnciOByySzoVUpedN8G-0-yLIwr1mNUZJT879KPONVHgJUxoaFj18h4meRYP9O_EJQKQQm1pRWya0nqNFbqUNgp7CLeEfJOI"/>
+        <span class="font-label-caps text-label-caps text-white">GOOGLE</span>
+        </button>
+        <button type="button" class="flex items-center justify-center gap-base border border-white/10 py-3 rounded-full bg-white/5 hover:bg-white/10 transition-all active:scale-95">
+        <span class="material-symbols-outlined text-white text-[20px]" data-weight="fill">ios</span>
+        <span class="font-label-caps text-label-caps text-white">APPLE</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Rewards Promotion -->
+    <div class="mt-xl p-md bg-secondary-container/5 border border-secondary-container/20 rounded-lg flex items-center gap-md relative overflow-hidden group">
+      <div class="absolute -right-4 -top-4 opacity-10 group-hover:rotate-12 transition-transform duration-500">
+        <span class="material-symbols-outlined text-[80px]">shopping_bag</span>
+      </div>
+      <div class="bg-secondary-container text-on-secondary p-base rounded-full flex items-center justify-center">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps text-secondary-container mb-xs">INNER CIRCLE REWARDS</h4>
+        <p class="font-body-sm text-body-sm text-white/60">Unlock 15% off your first luxury carry order.</p>
+      </div>
+    </div>
+  </div>
+  </section>
+</main>

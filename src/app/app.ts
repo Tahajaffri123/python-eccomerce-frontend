@@ -4,12 +4,11 @@ import { NavbarComponent } from './components/navbar/navbar';
 
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  styleUrl: './app.css',
 })
-export class AppComponent {
-  title = 'ecommerce-frontend';
-}
+export class App {}
