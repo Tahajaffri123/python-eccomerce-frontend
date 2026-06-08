@@ -4,7 +4,6 @@ import { NavbarComponent } from './components/navbar/navbar';
 
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent],
