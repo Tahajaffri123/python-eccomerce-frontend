@@ -1,31 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from './home-service';
-import { JsonPipe } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports:[JsonPipe],
+  imports: [RouterModule, CommonModule],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  styles: []
 })
-export class Home implements OnInit{
-  constructor(private _homeService: HomeService){
-  }
-  home:any
+export class Home implements OnInit {
+  currentUser: any = null;
 
-  ngOnInit(){
-    this.getHome();
-  }
-  getHome(){
-   this._homeService.getHome().subscribe({
-      next: (response) => {
-        this.home = response;
-        console.log('API Response Received:', response);
-      },
-      error: (err) => {
-        console.error('API Error:', err);
-      },
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.currentUser$.subscribe(user => {
+      this.currentUser = user;
     });
   }
 }

@@ -1,3 +1,20 @@
-<p>🏠 home works!</p>
-{{home | json}}
-dsds
+<div *ngIf="currentUser?.role === 'admin'; else userHome" class="container mt-5">
+  <div class="p-5 mb-4 bg-dark text-white rounded-3 shadow text-center">
+    <h1 class="display-4 fw-bold">Welcome Admin</h1>
+    <p class="fs-4">Manage your store's products and categories using the dashboard links above.</p>
+    <div class="mt-4">
+      <button class="btn btn-outline-light btn-lg me-3" routerLink="/admin/categories">Manage Categories</button>
+      <button class="btn btn-primary btn-lg" routerLink="/products">Manage Products</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #userHome>
+  <div class="p-5 mb-4 bg-light rounded-3 shadow-sm border">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Welcome to E-Shop</h1>
+      <p class="col-md-8 fs-4">Discover the latest tech and accessories online.</p>
+      <button class="btn btn-primary btn-lg" type="button" routerLink="/products">Shop Now</button>
+    </div>
+  </div>
+</ng-template>
